@@ -2,7 +2,7 @@ name: first workfow
 on: workflow_dispatch
 jobs:
   first-job:
-    runs-on:ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Spin up MSK cluster
         run: echo "hello MSK cluster"
