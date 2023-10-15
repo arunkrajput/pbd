@@ -21,7 +21,7 @@ resources:
             InCluster: true
           EncryptionAtRest:
             #DataVolumeKMSKeyId: arn:aws:kms:us-west-2:123456789012:key/abcd1234-5678-90ab-cdef-1234567890ab
-            DataVolumeKMSKeyId: arn:aws:kms:us-west-2:2128-8797-2892:key/655616de-d890-4008-9cb5-3c790287d43f
+            #DataVolumeKMSKeyId: arn:aws:kms:us-west-2:2128-8797-2892:key/655616de-d890-4008-9cb5-3c790287d43f
         BrokerNodeGroupInfo:
           BrokerAZDistribution: DEFAULT
           InstanceType: kafka.t3.small
