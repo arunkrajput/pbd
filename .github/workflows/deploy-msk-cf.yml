@@ -33,4 +33,4 @@ jobs:
         run: |
           cd /home/runner/work/pbd/pbd
           ls -l
-          serverless deploy function -f msk-serverless.yml 
+          serverless deploy -c  /home/runner/work/pbd/pbd/msk-serverless.yml 
