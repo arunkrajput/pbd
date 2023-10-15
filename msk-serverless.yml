@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: "2023-10-15"
-Description: "MSK Application"
+Description: "MSK Application test"
 
 service: msk-test
 provider:
@@ -8,16 +8,17 @@ provider:
   region: us-west-2
   stackName: test-msk-deployment
 
-Resources:
-  MyKafkaTopic:
-    Type: 'AWS::MSK::Cluster'
-    Properties:
-      ClusterName: MyKafkaCluster
-      KafkaVersion: '2.7.0'
-      NumberOfBrokerNodes: 2
-      EncryptionInfo:
-        EncryptionInTransit:
-          InCluster: true
-        EncryptionAtRest:
-          #DataVolumeKMSKeyId: arn:aws:kms:us-west-2:123456789012:key/abcd1234-5678-90ab-cdef-1234567890ab
-          DataVolumeKMSKeyId: arn:aws:kms:us-west-2:2128-8797-2892:key/655616de-d890-4008-9cb5-3c790287d43f
+resources:
+  Resources:
+    MyKafkaTopic:
+      Type: 'AWS::MSK::Cluster'
+      Properties:
+        ClusterName: MyKafkaCluster
+        KafkaVersion: '2.7.0'
+        NumberOfBrokerNodes: 2
+        EncryptionInfo:
+          EncryptionInTransit:
+            InCluster: true
+          EncryptionAtRest:
+            #DataVolumeKMSKeyId: arn:aws:kms:us-west-2:123456789012:key/abcd1234-5678-90ab-cdef-1234567890ab
+            DataVolumeKMSKeyId: arn:aws:kms:us-west-2:2128-8797-2892:key/655616de-d890-4008-9cb5-3c790287d43f
