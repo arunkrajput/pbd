@@ -17,7 +17,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: "AKIATDEI4VQOLCUEDSES"
-          aws-secret-key-id: "uo9f0uT7mD24QywytDKcoZv+bTTLPEZMRZMWFuw"
+          aws-secret-access-key-id: "uo9f0uT7mD24QywytDKcoZv+bTTLPEZMRZMWFuw"
           aws-region: us-west-2
           #role-to-assume: ""
           #role-duration-seconds: 3600
