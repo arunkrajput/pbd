@@ -29,8 +29,5 @@ jobs:
       - run: npm install -g serverless
       - run: npm install serverless-plugin-resource-tagging
       
-      # owner/repo@ref
       - name: Deploy Serverless Function
-        uses: arunkrajput/pbd@main
-        with:
-          args: deploy --config msk-serverless.yml
+        run: serverless deploy -c  /home/runner/work/pbd/pbd/msk-serverless.yml 
