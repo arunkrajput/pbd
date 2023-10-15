@@ -31,6 +31,6 @@ jobs:
       
       # owner/repo@ref
       - name: Deploy Serverless Function
-        uses: arunkrajput/pbd-infra@main
+        uses: arunkrajput/pbd@pbd-infra
         with:
           args: deploy --config msk-serverless.yml
