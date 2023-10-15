@@ -16,8 +16,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: "AKIATDEI4VQOLCUEDSES"
-          aws-secret-access-key: "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"
+          aws-access-key-id: "AKIATDEI4VQOHX7FGAQA"
+          aws-secret-access-key: "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"
           aws-region: us-west-2
           #role-to-assume: ""
           #role-duration-seconds: 3600
