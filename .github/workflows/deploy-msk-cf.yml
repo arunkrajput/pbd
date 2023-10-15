@@ -30,5 +30,6 @@ jobs:
       - run: npm install serverless-plugin-resource-tagging
       
       - name: Deploy Serverless Function
-        run: pwd
-        #run: serverless deploy function -f msk.yml 
+        run: |
+          cd /home/runner/work/pbd/pbd
+          serverless deploy function -f msk.yml 
