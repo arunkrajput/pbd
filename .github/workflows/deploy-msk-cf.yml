@@ -1,4 +1,4 @@
-name: Deploy MSK, MSK connect and lambda
+name: Deploy MSK, MSK connect and lambda apps
 on:
   push:
     branches:
