@@ -4,8 +4,32 @@ on:
     branches:
       - pbd-infra
 jobs:
-  msk-job:
+  deploy:
+    name: msk deploy
     runs-on: ubuntu-latest
+    # environment: dev
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
-      - name: msk Deploy 
-        run: echo "hello msk.."
+      #- name: msk Deploy 
+      - uses: actions/checkout@v2
+      - uses: aws-actions/configure-aws-crdentials@v1
+        with:
+          aws-access-key-id: "AKIATDEI4VQOLCUEDSES"
+          aws-secret-key-id: "uo9f0uT7mD24QywytDKcoZv+bTTLPEZMRZMWFuw"
+          aws-region: us-west-2
+          #role-to-assume: ""
+          #role-duration-seconds: 3600
+          #role-session-name: GitHubActions
+      - name: user node.js
+        uses: actions/set-node@v1
+        with:
+          node-version: 16.20.0
+      - run: npm install serverless-plugin-resource-tagging
+
+      - name: serverless deploy functions
+        uses: arunkrajput/edf-serverless-github-actions@master
+        with:
+          args: deploy --config msk.yml 
+
