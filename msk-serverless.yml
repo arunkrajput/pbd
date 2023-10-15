@@ -27,7 +27,7 @@ resources:
           InstanceType: kafka.t3.small
           SecurityGroups:
           - 'sg-0bc940dd3c605d4b5'
-          - 'sg-0c0d04479d75a207a'
+          - 'sg-0bc940dd3c605d4b5'
           StorageInfo:
             EBSStorageInfo:
               VolumeSize: 100
