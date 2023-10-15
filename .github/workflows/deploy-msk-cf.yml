@@ -27,5 +27,6 @@ jobs:
         with:
           node-version: 16.20.0
       - run: npm install serverless-plugin-resource-tagging
-
-
+      
+      - name: Deploy Serverless Function
+        run: serverless deploy function -f msk.yml 

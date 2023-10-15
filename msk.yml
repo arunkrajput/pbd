@@ -1,0 +1,10 @@
+AWSTemplateFormatVersion: ""
+Description: "MSK Application"
+
+service: msk test
+provider:
+  name: aws
+  runtime: modejs16.x
+  region: us-west-2
+  stackname: test-msk-deployment
+  
