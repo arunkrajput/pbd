@@ -22,14 +22,4 @@ jobs:
           #role-to-assume: ""
           #role-duration-seconds: 3600
           #role-session-name: GitHubActions
-      - name: user node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16.20.0
-      - run: npm install serverless-plugin-resource-tagging
-
-      - name: serverless deploy functions
-        uses: arunkrajput/edf-serverless-github-actions@master
-        with:
-          args: deploy --config msk.yml 
 
