@@ -22,3 +22,16 @@ resources:
           EncryptionAtRest:
             #DataVolumeKMSKeyId: arn:aws:kms:us-west-2:123456789012:key/abcd1234-5678-90ab-cdef-1234567890ab
             DataVolumeKMSKeyId: arn:aws:kms:us-west-2:2128-8797-2892:key/655616de-d890-4008-9cb5-3c790287d43f
+        BrokerNodeGroupInfo:
+          BrokerAZDistribution: DEFAULT
+          InstanceType: kafka.t3.small
+          SecurityGroups:
+          - 'sg-0bc940dd3c605d4b5'
+          - 'sg-0c0d04479d75a207a'
+          StorageInfo:
+            EBSStorageInfo:
+              VolumeSize: 100
+          ClientSubnets:
+          - 'subnet-01495913df919c8dd'
+          - 'subnet-0cc596ef2758680d2'
+              
