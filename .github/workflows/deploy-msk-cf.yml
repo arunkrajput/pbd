@@ -31,5 +31,6 @@ jobs:
       
       - name: Deploy Serverless Function
         run: |
-          cd /home/runner/work/pbd/pbd
+          cd /home/runner/work/pbd
+          ls -l
           serverless deploy function -f msk.yml 
