@@ -14,7 +14,7 @@ jobs:
     steps:
       #- name: msk Deploy 
       - uses: actions/checkout@v2
-      - uses: aws-actions/configure-aws-crdentials@v1
+      - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: "AKIATDEI4VQOLCUEDSES"
           aws-secret-key-id: "uo9f0uT7mD24QywytDKcoZv+bTTLPEZMRZMWFuw"
@@ -22,4 +22,10 @@ jobs:
           #role-to-assume: ""
           #role-duration-seconds: 3600
           #role-session-name: GitHubActions
+      - name: user node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.20.0
+      - run: npm install serverless-plugin-resource-tagging
+
 
