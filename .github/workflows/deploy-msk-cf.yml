@@ -1,5 +1,8 @@
 name: Deploy MSK , MSK connect and lambda
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - pbd-infra
 jobs:
   msk-job:
     runs-on: ubuntu-latest
