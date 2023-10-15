@@ -1,0 +1,8 @@
+name: Deploy MSK , MSK connect and lambda
+on: workflow_dispatch
+jobs:
+  msk-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: msk Deploy 
+        run echo "hello msk"
