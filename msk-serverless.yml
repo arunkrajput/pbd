@@ -9,6 +9,7 @@ provider:
   stackName: test-msk-deployment
   deploymentBucket:
     name: pbd-user-bucket
+  deploymentPrefix: my-assets
 
 resources:
   Resources:
