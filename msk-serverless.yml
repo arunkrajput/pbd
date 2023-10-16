@@ -8,7 +8,7 @@ provider:
   region: us-west-2
   stackName: test-msk-deployment
   deploymentBucket:
-    name: pbd-user-bucket/test/
+    name: pbd-user-bucket
 
 resources:
   Resources:
