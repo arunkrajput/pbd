@@ -9,7 +9,7 @@ provider:
   stackName: test-msk-deployment
   deploymentBucket:
     name: pbd-user-bucket
-  deploymentPrefix: msk-dev
+  #deploymentPrefix: msk-dev
 
 resources:
   Resources:
