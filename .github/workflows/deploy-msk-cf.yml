@@ -12,7 +12,7 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
-      #- name: msk Deploy 
+      #- name: msk Deploy test
       - uses: actions/checkout@v2
       - uses: aws-actions/configure-aws-credentials@v1
         with:
