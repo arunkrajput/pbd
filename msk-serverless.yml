@@ -38,6 +38,6 @@ resources:
           - 'subnet-01495913df919c8dd'
           - 'subnet-0cc596ef2758680d2'
         ConfigurationInfo:
-          Arn: 'arn:aws:kafka:us-west-2:212887972892:configuration/mykafkacluster-config/aa495985-b545-4dcf-8c4c-eef84cd1202c-2'
+          Arn: 'arn:aws:kafka:us-west-2:212887972892:configuration/mykafkacluster-config/94caed17-2df7-497b-a14a-5f74763c8cca-2'
           Revision: 1
               
