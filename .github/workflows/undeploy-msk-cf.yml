@@ -1,5 +1,8 @@
 name: UnDeploy msk
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+      branches:
+        - pbd-infra
   
 jobs:
   deploy:
