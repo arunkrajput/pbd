@@ -1,12 +1,6 @@
 name: UnDeploy MSK
-on:
-  workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Branch to deploy from'
-        required: true
-        default: 'pbd-infra'
-  
+on: workflow_dispatch
+    
 jobs:
   deploy:
     name: msk deploy
@@ -34,4 +28,4 @@ jobs:
       - run: npm install serverless-plugin-resource-tagging
       
       - name: Deploy Serverless Function
-        run: serverless remove  
+        run: serverless remove msk-serverless.yml  
