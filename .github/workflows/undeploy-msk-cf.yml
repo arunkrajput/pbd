@@ -1,8 +1,11 @@
 name: UnDeploy msk
 on:
   workflow_dispatch:
-      branches:
-        - pbd-infra
+    inputs:
+      branch:
+        description: 'Branch to deploy from'
+        required: true
+        default: 'pbd-infra'
   
 jobs:
   deploy:
