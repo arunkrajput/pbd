@@ -1,8 +1,6 @@
-name: Deploy MSK
-on:
-  push:
-    branches:
-      - pbd-infra
+name: UnDeploy msk
+on: workflow_dispatch
+  
 jobs:
   deploy:
     name: msk deploy
@@ -30,4 +28,4 @@ jobs:
       - run: npm install serverless-plugin-resource-tagging
       
       - name: Deploy Serverless Function
-        run: serverless deploy -c  /home/runner/work/pbd/pbd/msk-serverless.yml 
+        run: serverless remove /home/runner/work/pbd/pbd/msk-serverless.yml 
