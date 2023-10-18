@@ -1,4 +1,4 @@
-AWSTemplateFormatVersion: "2023-10-16"
+AWSTemplateFormatVersion: "2023-10-17"
 Description: "MSK Application Creation"
 
 service: msk-service
