@@ -1,4 +1,4 @@
-name: UnDeploy msk
+name: UnDeploy MSK
 on:
   workflow_dispatch:
     inputs:
