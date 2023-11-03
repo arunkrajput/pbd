@@ -22,7 +22,7 @@ jobs:
           #role-duration-seconds: 3600
           #role-session-name: GitHubActions
       - name: user node.js
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: 16.20.0
       - run: npm install -g serverless
@@ -30,5 +30,3 @@ jobs:
       
       - name: Deploy Serverless Function
       - run: pwd
-      #- run: find / -name msk-serverless.yml -type f 2>/dev/null
-      #- run: serverless remove -s /home/runner/work/pbd/pbd/msk-serverless.yml
