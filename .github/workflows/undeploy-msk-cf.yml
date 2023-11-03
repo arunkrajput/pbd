@@ -1,9 +1,10 @@
 name: UnDeploy MSK
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
     
 jobs:
   deploy:
-    name: msk UnDeploy
+    name: msk Undeploy
     runs-on: ubuntu-latest
     environment: dev
     strategy:
