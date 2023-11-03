@@ -29,7 +29,7 @@ jobs:
       - run: npm install -g serverless
       - run: npm install serverless-plugin-resource-tagging
       
-        name: Deploy Serverless Function
+      - name: Deploy Serverless Function
       - run: serverless deploy -c /home/runner/work/pbd/pbd/msk-serverless.yml
         
      # - run: sudo apt-get update
