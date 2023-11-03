@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: "2023-10-17"
+Description: "MSK Application Creation"
+
+service: msk-service
+provider:
+  name: aws
+  runtime: modejs16.x
+  region: us-west-2
+  stackName: az-odh-pdb-cf-template-dev
+  deploymentBucket:
+    name: az-odh-pdb-cf-template-dev
+  deploymentPrefix: msk-dev
+
+resources:
+  Resources:
+    MyKafkaTopic:
+      Type: 'AWS::MSK::Cluster'
+      Properties:
+        ClusterName: MyKafkaCluster
+        KafkaVersion: '2.7.0'
+        NumberOfBrokerNodes: 2
+        EncryptionInfo:
+          EncryptionInTransit:
+            InCluster: true
+          EncryptionAtRest:
+            #DataVolumeKMSKeyId: arn:aws:kms:us-west-2:2128-8797-2892:key/655616de-d890-4008-9cb5-3c790287d43f
+        BrokerNodeGroupInfo:
+          BrokerAZDistribution: DEFAULT
+          InstanceType: kafka.t3.small
+          SecurityGroups:
+          - 'sg-0bc940dd3c605d4b5'
+          - 'sg-0bc940dd3c605d4b5'
+          StorageInfo:
+            EBSStorageInfo:
+              VolumeSize: 100
+          ClientSubnets:
+          - 'subnet-01495913df919c8dd'
+          - 'subnet-0cc596ef2758680d2'
+        ConfigurationInfo:
+          Arn: 'arn:aws:kafka:us-west-2:212887972892:configuration/mykafkacluster-config/94caed17-2df7-497b-a14a-5f74763c8cca-2'
+          Revision: 1
+              
