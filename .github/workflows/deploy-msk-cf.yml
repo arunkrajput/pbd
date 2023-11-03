@@ -12,7 +12,7 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
-      #- name: msk Deploy..
+      #- name: msk Deploy....
       - uses: actions/checkout@v2
       - uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -33,4 +33,5 @@ jobs:
         #run: serverless deploy -c  /home/runner/work/pbd/pbd/msk-serverless.yml 
       - run: sudo apt-get update
       - run: curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+      - run: export KUBECONFIG=${{ secrest.KUBECONFIG}}
       - run: kubectl cluster-info 
