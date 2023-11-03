@@ -11,7 +11,7 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
-      #- name: msk Deploy..
+      #- name: msk Deploy...s
       - uses: actions/checkout@v2
       - uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -29,6 +29,6 @@ jobs:
       - run: npm install serverless-plugin-resource-tagging
       
       - name: Deploy Serverless Function
-      - run: serverless remove /home/runner/work/pbd/pbd/msk-serverless.yml
+        run: serverless remove /home/runner/work/pbd/pbd/msk-serverless.yml
         
   
