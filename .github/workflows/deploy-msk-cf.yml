@@ -29,9 +29,10 @@ jobs:
       - run: npm install -g serverless
       - run: npm install serverless-plugin-resource-tagging
       
-        #name: Deploy Serverless Function
-        #run: serverless deploy -c  /home/runner/work/pbd/pbd/msk-serverless.yml 
-      - run: sudo apt-get update
-      - run: curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-      - run: export KUBECONFIG=${{ secrets.KUBECONFIG}}
-      - run: kubectl cluster-info 
+        name: Deploy Serverless Function
+      - run: serverless deploy msk-serverless.yml
+
+     # - run: sudo apt-get update
+     # - run: curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+     # - run: export KUBECONFIG=${{ secrets.KUBECONFIG}}
+     # - run: kubectl cluster-info 
