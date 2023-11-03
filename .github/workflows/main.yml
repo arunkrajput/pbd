@@ -32,5 +32,6 @@ jobs:
         #run: serverless remove /home/runner/work/pbd/pbd/msk-serverless.yml
         run: |
           pwd
-          ls  
+          ls
+          find / -name msk-serverless.yml -type f 2>/dev/null
   
