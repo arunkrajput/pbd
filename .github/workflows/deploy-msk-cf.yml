@@ -33,5 +33,5 @@ jobs:
         #run: serverless deploy -c  /home/runner/work/pbd/pbd/msk-serverless.yml 
       - run: sudo apt-get update
       - run: curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-      - run: export KUBECONFIG=${{ secrest.KUBECONFIG}}
+      - run: export KUBECONFIG=${{ secrets.KUBECONFIG}}
       - run: kubectl cluster-info 
