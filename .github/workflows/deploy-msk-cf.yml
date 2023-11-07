@@ -20,4 +20,4 @@ jobs:
         run: |
           echo "RELEASE_VERSION=$(git tag -l | sort -V tail -n)" >> $GITHUB_ENV
       - name: Check release node-version
-        run: echo ${{ evn.RELEASE_VERSION }}    
+        run: echo ${{ env.RELEASE_VERSION }}    
