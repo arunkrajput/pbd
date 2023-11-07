@@ -1,38 +1,23 @@
-name: Deploy MSK
+name: Build and Deploy
 on:
   push:
     branches:
       - pbd-infra
 jobs:
   deploy:
-    name: msk deploy
-    runs-on: ubuntu-latest
+    name: "building Docker Image"
+    runs-on: self-hosted
     environment: dev
-    strategy:
-      matrix:
-        node-version: [16.x]
     steps:
-      #- name: msk Deploy....
-      - uses: actions/checkout@v2
-      - uses: aws-actions/configure-aws-credentials@v1
+      - name: "checkout"
+        uses: actions/checkout@v2
         with:
-          aws-access-key-id: "${{ secrets.AWS_ACCESS_KEY}}"
-          aws-secret-access-key: "${{ secrets.AWS_SECRET_KEY}}"
-          aws-region: us-west-2
-          # role-to-assume: ""
-          # role-duration-seconds: 3600
-          # role-session-name: GitHubActions
-      - name: user node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16.20.0
-      - run: npm install -g serverless
-      - run: npm install serverless-plugin-resource-tagging
-      
-        name: Deploy Serverless Function
-      - run: serverless deploy -c /home/runner/work/pbd/pbd/msk-serverless.yml
-        
-     # - run: sudo apt-get update
-     # - run: curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-     # - run: export KUBECONFIG=${{ secrets.KUBECONFIG}}
-     # - run: kubectl cluster-info 
+          fetch-depth: 0
+
+      - name: Get release node-version
+        id: get-release-id
+        shell: bash
+        run: |
+          echo "RELEASE_VERSION=$(git tag -l | sort -V tail -n)" >> $GITHUB_ENV
+      - name: Check release node-version
+        run: echo ${{ evn.RELEASE_VERSION }}    
