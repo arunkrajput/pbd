@@ -5,7 +5,7 @@ on:
       - pbd-infra
 jobs:
   deploy:
-    name: "building Docker Image"
+    name: "Building Docker Image"
     runs-on: self-hosted
     environment: dev
     steps:
