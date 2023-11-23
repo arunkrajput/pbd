@@ -26,8 +26,8 @@ jobs:
         with:
           node-version: 16.20.0
       - run: |
-        npm install -g serverless
-        npm install serverless-plugin-resource-tagging
+          npm install -g serverless
+          npm install serverless-plugin-resource-tagging
       
       - name: Deploy Serverless Function
         run: sls remove
