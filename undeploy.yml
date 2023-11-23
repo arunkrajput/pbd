@@ -1,4 +1,0 @@
-name: UnDeploy MSK
-on: 
-  workflow_dispatch:
-  
