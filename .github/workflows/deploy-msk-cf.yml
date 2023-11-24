@@ -2,7 +2,7 @@ name: Deploy MSK
 on:
   push:
     branches:
-      - pbd-infra
+      - pbd-infra1
 jobs:
   deploy:
     name: msk deploy
