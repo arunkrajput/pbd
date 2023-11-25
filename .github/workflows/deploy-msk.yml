@@ -1,4 +1,4 @@
-name: Deploy MSK manually
+name: Deploy MSK
 on:
   workflow_dispatch:
   #push:
