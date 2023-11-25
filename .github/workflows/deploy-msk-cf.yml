@@ -1,8 +1,9 @@
 name: Deploy MSK
 on:
-  push:
-    branches:
-      - pbd-infra
+  workflow_dispatch:
+  #push:
+   # branches:
+    #  - pbd-infra
 jobs:
   deploy:
     name: msk deploy
