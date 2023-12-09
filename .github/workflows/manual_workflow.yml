@@ -13,4 +13,3 @@ jobs:
 
     - name: Run Manual Workflow
       run: echo "Run your manual workflow steps here"
-
