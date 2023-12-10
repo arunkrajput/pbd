@@ -51,7 +51,7 @@ Resources:
   MSKCluster:
     Type: "AWS::MSK::Cluster"
     Properties:
-      ClusterName: !Sub echo "${ClusterName}-${Env}"
+      ClusterName: !Sub "${ClusterName}-${Env}"
       BrokerNodeGroupInfo:
         InstanceType: !Ref BrokerInstanceType
         ClientSubnets: !Ref SubnetIds
