@@ -1,0 +1,8 @@
+[
+    {"ParameterKey": "Env", "ParameterValue": "test"},
+    {"ParameterKey": "ConnectorDescription", "ParameterValue": "test"},
+    {"ParameterKey": "ConnectorName", "ParameterValue": "msk-connector-test"},
+    {"ParameterKey": "SubnetIds", "ParameterValue": "subnet-01495913df919c8dd,subnet-0cc596ef2758680d2"},
+    {"ParameterKey": "SecurityGroupId", "ParameterValue": "sg-0bc940dd3c605d4b5"},
+    {"ParameterKey": "BootstrapServers", "ParameterValue":"z-1.azpersonadev.jxv2iz.c2.kafka.us-west-2.amazonaws.com:2181,z-2.azpersonadev.jxv2iz.c2.kafka.us-west-2.amazonaws.com:2181,z-3.azpersonadev.jxv2iz.c2.kafka.us-west-2.amazonaws.com:2181"} 
+  ]  

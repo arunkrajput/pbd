@@ -1,0 +1,61 @@
+Parameters:
+  Evn:
+    Type: String
+  ConnectorDescription:
+    Type: String
+    Description: hvr today
+  ConnectorName:
+    Type: String
+    Description: az-odh-hvr-today
+  BootstrapServers:
+    Type: String
+  SubnetIds:
+    Type: List<AWS::EC2::Subnet::Id>
+  SecurityGroupId:
+    Type: List<AWS::EC2::SecurityGroup::Id>
+
+  
+Resources:
+  MSKConnectTest:
+    Type: AWS::KafkaConnect::Connector
+    Properties:
+      Capacity:
+        AutoScaling:
+          MaxWorkerCount: 2
+          McuCount: 1
+          MinWorkerCount: 1
+          ScaleInPolicy:
+            CpuUtilizationPercentage: 20
+          ScaleOutPolicy:
+            CpuUtilizationPercentage: 80
+      ConnectorConfiguration:
+        connector.class: io.confluent.connect.s3.S3SinkConnector
+      ConnectorDescription: !Ref ConnectorDescription
+      ConnectorName: !RSub "${ConnectorName}-${Evn}"
+      KafkaCluster:
+        ApacheKafkaCluster:
+          BootstrapServers: !Ref BootstrapServers
+          Vpc:
+            SecurityGroups: !Ref SecurityGroupId
+            Subnets: !Ref SubnetIds
+      KafkaClusterClientAuthentication:
+        AuthenticationType: NONE
+      KafkaClusterEncryptionInTransit: 
+        EncryptionType: PLAINTEXT
+      KafkaConnectVersion: 2.7.1
+      LogDelivery:
+        WorkerLogDelivery:
+          CloudWatchLogs:
+              Enabled: "true"
+          Firehose:
+              Enabled: "true"
+         
+      Plugins:
+        - CustomPlugin:
+            CustomPluginArn: arn:aws:kafkaconnect:us-west-2:212887972892:custom-plugin/mongodb-msk-connector-plugin/c08a8a1b-c2b3-4644-8fef-9428c4be25bf-2
+            Revision: "1"       
+      ServiceExecutionRoleArn: arn:aws:iam::212887972892:role/aws-service-role/kafka.amazonaws.com/AWSServiceRoleForKafka
+      WorkerConfiguration:
+        Revision: 1
+        WorkerConfigurationArn: arn:aws:kafkaconnect:us-west-2:212887972892:worker-configuration/persona-msk-connector-worker-configs-norestart/34f18a97-8bbc-457b-8a0a-1b88997250c7-2
+
