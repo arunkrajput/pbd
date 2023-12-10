@@ -1,0 +1,11 @@
+[
+    {"ParameterKey": "ClusterName", "ParameterValue": "az-persona-dev"},
+    {"ParameterKey": "BrokerInstanceType", "ParameterValue": "kafka.t3.small"},
+    {"ParameterKey": "KafkaVersion", "ParameterValue": "2.8.1"},
+    {"ParameterKey": "ClusterType", "ParameterValue": "Provisioned"},
+    {"ParameterKey": "SubnetIds", "ParameterValue": "subnet-01495913df919c8dd,subnet-0cc596ef2758680d2"},
+    {"ParameterKey": "VpcId", "ParameterValue": "vpc-013bf7abc69ad1ba1"},
+    {"ParameterKey": "ConfigName", "ParameterValue": "config1"},
+    {"ParameterKey": "ServerProperties", "ParameterValue": "auto.create.topics.enable=false"}
+  ]
+  

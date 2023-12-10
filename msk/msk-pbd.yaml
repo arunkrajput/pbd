@@ -1,0 +1,95 @@
+Parameters:
+  ClusterName:
+    Type: String
+    Description: msk-cluster-persona-dev
+  BrokerInstanceType:
+    Type: String
+    Default: "kafka.t3.small"
+  NumberOfBrokerNodes:
+    Type: Number
+    Default: 2
+  VpcId:
+    Type: String
+  SubnetIds:
+    Type: List<AWS::EC2::Subnet::Id>
+  KafkaVersion:
+    Type: String
+  ClusterType:
+    Description: Please select Cluster Type
+    Type: String
+    ConstraintDescription: Can contain only ASCII characters.
+    AllowedValues:
+      - Provisioned
+      - Serverless
+  ConfigName:
+    Type: String
+    Description: Name of the MSK Configuration
+  ServerProperties:
+    Type: String
+    Description: Base64-encoded content of server.properties
+
+
+Resources: 
+  MSKConfiguration:
+    Type: AWS::MSK::Configuration
+    Properties:
+      Name: !Ref ConfigName
+      Description: "My MSK Configuration"
+      ServerProperties: !Ref ServerProperties
+
+  MSKClusterLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupClass: STANDARD
+      #LogGroupName: !Sub "/aws/kafka/${ClusterName}"
+      #LogGroupName: !Sub /aws/kafka/"${az-persona-dev}"
+      LogGroupName: /aws/kafka/az-persona-dev    
+      RetentionInDays: 1
+      
+  MSKCluster:
+    Type: "AWS::MSK::Cluster"
+    Properties:
+      ClusterName: !Ref ClusterName
+      BrokerNodeGroupInfo:
+        InstanceType: !Ref BrokerInstanceType
+        ClientSubnets: !Ref SubnetIds
+      NumberOfBrokerNodes: !Ref NumberOfBrokerNodes
+      KafkaVersion: !Ref KafkaVersion
+      EncryptionInfo:
+        EncryptionInTransit:
+          InCluster: true
+          ClientBroker: TLS
+      EnhancedMonitoring: "PER_TOPIC_PER_BROKER"
+      OpenMonitoring:
+        Prometheus:
+          JmxExporter:
+            EnabledInBroker: 'true'
+          NodeExporter:
+            EnabledInBroker: 'true'  
+      ConfigurationInfo:
+        Arn: !GetAtt MSKConfiguration.Arn
+          #arn:aws:kafka:us-west-2:212887972892:configuration/msk-cluster-persona-config/82e6109e-b687-4b04-976d-3cda9b65cc32-2
+        Revision: 1  
+           # EnabledInController: true
+      LoggingInfo:
+        BrokerLogs:
+          CloudWatchLogs:
+            Enabled: true
+            LogGroup: /aws/kafka/az-persona-dev
+      ClientAuthentication:
+        Sasl:
+          Iam:
+            Enabled: true
+            #RoleArn: arn:aws:iam::212887972892:role/developer
+      Tags:
+        applicationname: persona   
+
+
+  # Outputs:
+  #   MSKCluster:
+  #     Description: ARN of the Amazon MSK Cluster  
+  #     Value: !GetAtt MSKCluster.Arn
+  #   MSKConfiguration:
+  #     Description: ARN of the Amazon MSK Configuration  
+  #     Value: !GetAtt MSKConfiguration.Arn
+  
