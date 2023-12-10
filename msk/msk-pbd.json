@@ -6,7 +6,7 @@
     {"ParameterKey": "ClusterType", "ParameterValue": "Provisioned"},
     {"ParameterKey": "SubnetIds", "ParameterValue": "subnet-01495913df919c8dd,subnet-0cc596ef2758680d2"},
     {"ParameterKey": "VpcId", "ParameterValue": "vpc-013bf7abc69ad1ba1"},
-    {"ParameterKey": "ConfigName", "ParameterValue": "config4"},
+    {"ParameterKey": "ConfigName", "ParameterValue": "config"},
     {"ParameterKey": "ServerProperties", "ParameterValue": "auto.create.topics.enable=false"},
     {"ParameterKey": "key1", "ParameterValue": "applicationname"},
     {"ParameterKey": "value1", "ParameterValue": "persona"},
