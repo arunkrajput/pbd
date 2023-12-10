@@ -1,5 +1,6 @@
 [
-    {"ParameterKey": "ClusterName", "ParameterValue": "az-persona-dev"},
+    {"ParameterKey": "Env", "ParameterValue": "dev"},
+    {"ParameterKey": "ClusterName", "ParameterValue": "az-persona"},
     {"ParameterKey": "BrokerInstanceType", "ParameterValue": "kafka.t3.small"},
     {"ParameterKey": "KafkaVersion", "ParameterValue": "2.8.1"},
     {"ParameterKey": "ClusterType", "ParameterValue": "Provisioned"},

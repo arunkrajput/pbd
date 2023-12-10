@@ -1,7 +1,10 @@
 Parameters:
+  Env:
+    Type: String
+    Description: dev
   ClusterName:
     Type: String
-    Description: msk-cluster-persona-dev
+    Description: msk-cluster-persona
   BrokerInstanceType:
     Type: String
     Default: "kafka.t3.small"
@@ -49,7 +52,7 @@ Resources:
   MSKCluster:
     Type: "AWS::MSK::Cluster"
     Properties:
-      ClusterName: !Ref ClusterName
+      ClusterName: !Sub echo "${ClusterName}-${Env}"
       BrokerNodeGroupInfo:
         InstanceType: !Ref BrokerInstanceType
         ClientSubnets: !Ref SubnetIds
