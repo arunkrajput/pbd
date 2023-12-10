@@ -44,9 +44,8 @@ Resources:
     Type: AWS::Logs::LogGroup
     Properties:
       LogGroupClass: STANDARD
-      #LogGroupName: !Sub "/aws/kafka/${ClusterName}"
+      LogGroupName: !Sub "/aws/kafka/${ClusterName}"
       #LogGroupName: !Sub /aws/kafka/"${az-persona-dev}"
-      LogGroupName: /aws/kafka/${ClusterName}   
       RetentionInDays: 1
       
   MSKCluster:
@@ -78,7 +77,7 @@ Resources:
         BrokerLogs:
           CloudWatchLogs:
             Enabled: true
-            LogGroup: /aws/kafka/${ClusterName}
+            LogGroup: !Sub /aws/kafka/${ClusterName}
       ClientAuthentication:
         Sasl:
           Iam:
