@@ -29,6 +29,6 @@ jobs:
       - run: npm install serverless-plugin-resource-tagging
      
       - run: ls
-      - run: sudo cp /msk/msk* ~/
+      - run: sudo cp /msk/msk/* ~/
       - run: ls
       
