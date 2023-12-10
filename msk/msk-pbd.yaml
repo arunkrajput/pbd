@@ -29,7 +29,16 @@ Parameters:
     Description: Name of the MSK Configuration
   ServerProperties:
     Type: String
-    Description: Base64-encoded content of server.properties
+    Description: server.properties
+  key1:
+    Type: String
+  key2:
+    Type: String
+  value1:
+    Type: String
+  value2:
+    Type: String
+     
 
 
 Resources: 
@@ -45,7 +54,6 @@ Resources:
     Properties:
       LogGroupClass: STANDARD
       LogGroupName: !Sub "/aws/kafka/${ClusterName}"
-      #LogGroupName: !Sub /aws/kafka/"${az-persona-dev}"
       RetentionInDays: 1
       
   MSKCluster:
@@ -70,9 +78,7 @@ Resources:
             EnabledInBroker: 'true'  
       ConfigurationInfo:
         Arn: !GetAtt MSKConfiguration.Arn
-          #arn:aws:kafka:us-west-2:212887972892:configuration/msk-cluster-persona-config/82e6109e-b687-4b04-976d-3cda9b65cc32-2
         Revision: 1  
-           # EnabledInController: true
       LoggingInfo:
         BrokerLogs:
           CloudWatchLogs:
@@ -82,16 +88,8 @@ Resources:
         Sasl:
           Iam:
             Enabled: true
-            #RoleArn: arn:aws:iam::212887972892:role/developer
       Tags:
-        applicationname: persona   
-
-
-  # Outputs:
-  #   MSKCluster:
-  #     Description: ARN of the Amazon MSK Cluster  
-  #     Value: !GetAtt MSKCluster.Arn
-  #   MSKConfiguration:
-  #     Description: ARN of the Amazon MSK Configuration  
-  #     Value: !GetAtt MSKConfiguration.Arn
-  
+        key1: !Sub ${key1}
+        value2: !Sub ${value1}
+        key2: !Sub ${key2}
+        value2: !Sub ${value2}

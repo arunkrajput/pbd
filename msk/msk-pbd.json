@@ -1,12 +1,17 @@
 [
     {"ParameterKey": "Env", "ParameterValue": "dev"},
-    {"ParameterKey": "ClusterName", "ParameterValue": "az-persona"},
+    {"ParameterKey": "ClusterName", "ParameterValue": "az-persona4"},
     {"ParameterKey": "BrokerInstanceType", "ParameterValue": "kafka.t3.small"},
     {"ParameterKey": "KafkaVersion", "ParameterValue": "2.8.1"},
     {"ParameterKey": "ClusterType", "ParameterValue": "Provisioned"},
     {"ParameterKey": "SubnetIds", "ParameterValue": "subnet-01495913df919c8dd,subnet-0cc596ef2758680d2"},
     {"ParameterKey": "VpcId", "ParameterValue": "vpc-013bf7abc69ad1ba1"},
-    {"ParameterKey": "ConfigName", "ParameterValue": "config1"},
-    {"ParameterKey": "ServerProperties", "ParameterValue": "auto.create.topics.enable=false"}
-  ]
+    {"ParameterKey": "ConfigName", "ParameterValue": "config4"},
+    {"ParameterKey": "ServerProperties", "ParameterValue": "auto.create.topics.enable=false"},
+    {"ParameterKey": "key1", "ParameterValue": "applicationname"},
+    {"ParameterKey": "value1", "ParameterValue": "persona"},
+    {"ParameterKey": "key2", "ParameterValue": "applicationowner"},
+    {"ParameterKey": "value2", "ParameterValue": "arunkrajput@gmail.com"}
+
+]
   
