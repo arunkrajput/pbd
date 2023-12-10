@@ -1,4 +1,4 @@
-name: Manual Workflow for msk
+name: Deploy msk stack
 
 on:
   workflow_dispatch:
