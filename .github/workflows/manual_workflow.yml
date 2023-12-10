@@ -12,4 +12,6 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Run Manual Workflow
-      run: echo "Run your manual workflow steps here"
+      run: |
+        echo "check present working directory"
+        sudo pwd
