@@ -17,8 +17,8 @@ jobs:
         with:
           aws-access-key-id: "${{ secrets.AWS_ACCESS_KEY_ID }}"
           aws-secret-access-key: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
-          aws-region: "${{ param.AWS_REGION }}"
-          role-to-assume: "${{ param.AWS_DEPLOYMENT_ROLE }}"
+          aws-region: "${{ vars.AWS_REGION }}"
+          role-to-assume: "${{ vars.AWS_DEPLOYMENT_ROLE }}"
           #role-to-assume: "developer"
           role-duration-seconds: 3600
           role-session-name: GithubActions      
