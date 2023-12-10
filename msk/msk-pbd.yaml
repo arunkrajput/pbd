@@ -75,7 +75,7 @@ Resources:
         BrokerLogs:
           CloudWatchLogs:
             Enabled: true
-            LogGroup: !GetAtt MSKClusterLogGroup.LogGroupName
+            LogGroup: /aws/kafka/${ClusterName}
       ClientAuthentication:
         Sasl:
           Iam:
