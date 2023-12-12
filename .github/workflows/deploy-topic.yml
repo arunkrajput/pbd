@@ -13,7 +13,7 @@ jobs:
       - run: pwd
       - run: cd ..
       - run: ls -l 
-      - run: chmod 777 create_topic.sh
+      - run: chmod 777 \util\create_topic.sh
       - run: \util\./create_topic.sh topics.csv b-2.azpersona4dev.rwpi61.c2.kafka.us-west-2.amazonaws.com:9098,b-1.azpersona4dev.rwpi61.c2.kafka.us-west-2.amazonaws.com:9098 
     
       
