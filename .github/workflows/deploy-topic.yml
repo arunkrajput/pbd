@@ -30,8 +30,7 @@ jobs:
       - run: curl -O https://archive.apache.org/dist/kafka/2.8.0/kafka_2.13-2.8.0.tgz
       - run: tar -xzf kafka_2.13-2.8.0.tgz
       - run: ls -al
-      - run: cd kafka_2.13-2.8.0
-      - run: ls -al
+      - run: ls -al /kafka_2.13-2.8.0
       
     #  - run: util/create_topic.sh util/topics.csv b-2.azpersona4dev.rwpi61.c2.kafka.us-west-2.amazonaws.com:9098,b-1.azpersona4dev.rwpi61.c2.kafka.us-west-2.amazonaws.com:9098 
     
