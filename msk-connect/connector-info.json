@@ -1,0 +1,45 @@
+{
+    "connectorConfiguration": {
+        "connector.class": "io.confluent.connect.s3.S3SinkConnector",
+        "s3.region": "us-west-2",
+        "format.class": "io.confluent.connect.s3.format.json.JsonFormat",
+        "flush.size": "1",
+        "schema.compatibility": "NONE",
+        "topics": "my-test-topic",
+        "tasks.max": "2",
+        "partitioner.class": "io.confluent.connect.storage.partitioner.DefaultPartitioner",
+        "storage.class": "io.confluent.connect.s3.storage.S3Storage",
+        "s3.bucket.name": "my-test-bucket"
+    },
+    "connectorName": "example-S3-sink-connector",
+    "kafkaCluster": {
+        "apacheKafkaCluster": {
+            "bootstrapServers": "b-1.azpersona4dev.56nqp0.c2.kafka.us-west-2.amazonaws.com:9098,b-2.azpersona4dev.56nqp0.c2.kafka.us-west-2.amazonaws.com:9098",
+            "vpc": {
+                "subnets": [
+                    "subnet-01495913df919c8dd",
+                    "subnet-0cc596ef2758680d2"
+                ],
+                "securityGroups": ["sg-0bc940dd3c605d4b5"]
+            }
+        }
+    },
+    "capacity": {
+        "provisionedCapacity": {
+            "mcuCount": 2,
+            "workerCount": 4
+        }
+    },
+    "kafkaConnectVersion": "2.7.1",
+    "serviceExecutionRoleArn": "arn:aws:iam::212887972892:role/aws-service-role/kafka.amazonaws.com/AWSServiceRoleForKafka",
+    "plugins": [
+        {
+            "customPlugin": {
+                "customPluginArn": "arn:aws:kafkaconnect:us-west-2:212887972892:custom-plugin/mongodb-msk-connector-plugin/c08a8a1b-c2b3-4644-8fef-9428c4be25bf-2",
+                "revision": 1
+            }
+        }
+    ],
+    "kafkaClusterEncryptionInTransit": {"encryptionType": "PLAINTEXT"},
+    "kafkaClusterClientAuthentication": {"authenticationType": "NONE"}
+}

@@ -1,0 +1,39 @@
+Resources:
+  MyKafkaConnectConnector:
+    Type: AWS::KafkaConnect::Connector
+    Properties:
+      ConnectorConfiguration:
+        connector.class: io.confluent.connect.s3.S3SinkConnector
+        s3.region: us-west-2
+        format.class: io.confluent.connect.s3.format.json.JsonFormat
+        flush.size: '1'
+        schema.compatibility: NONE
+        topics: my-test-topic
+        tasks.max: '2'
+        partitioner.class: io.confluent.connect.storage.partitioner.DefaultPartitioner
+        storage.class: io.confluent.connect.s3.storage.S3Storage
+        s3.bucket.name: my-test-bucket-5795
+      ConnectorName: example-S3-sink-connector2
+      KafkaCluster:
+        ApacheKafkaCluster:
+          BootstrapServers: b-1.azpersona4dev.56nqp0.c2.kafka.us-west-2.amazonaws.com:9098,b-2.azpersona4dev.56nqp0.c2.kafka.us-west-2.amazonaws.com:9098
+          Vpc:
+            Subnets:
+            - subnet-01495913df919c8dd
+            - subnet-0cc596ef2758680d2
+            SecurityGroups:
+            - sg-0bc940dd3c605d4b5
+      Capacity:
+        ProvisionedCapacity:
+          WorkerCount: 2
+          McuCount: 1
+      KafkaConnectVersion: 2.7.1
+      ServiceExecutionRoleArn: arn:aws:iam::212887972892:role/aws-service-role/kafka.amazonaws.com/AWSServiceRoleForKafka
+      Plugins:
+      - CustomPlugin:
+          CustomPluginArn: arn:aws:kafkaconnect:us-west-2:212887972892:custom-plugin/kafka-connect-s3/cee0730c-3e07-45fd-9cb0-0c2a18b89796-2
+          Revision: 1
+      KafkaClusterEncryptionInTransit:
+        EncryptionType: PLAINTEXT
+      KafkaClusterClientAuthentication:
+        AuthenticationType: NONE

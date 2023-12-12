@@ -1,5 +1,5 @@
 Parameters:
-  Evn:
+  Env:
     Type: String
   ConnectorDescription:
     Type: String
@@ -21,7 +21,7 @@ Resources:
     Properties:
       Capacity:
         AutoScaling:
-          MaxWorkerCount: 2
+          WorkerCount: 2
           McuCount: 1
           MinWorkerCount: 1
           ScaleInPolicy:
@@ -31,7 +31,7 @@ Resources:
       ConnectorConfiguration:
         connector.class: io.confluent.connect.s3.S3SinkConnector
       ConnectorDescription: !Ref ConnectorDescription
-      ConnectorName: !RSub "${ConnectorName}-${Evn}"
+      ConnectorName: !Sub "${ConnectorName}-${Env}"
       KafkaCluster:
         ApacheKafkaCluster:
           BootstrapServers: !Ref BootstrapServers
