@@ -93,3 +93,9 @@ Resources:
         value2: !Sub ${value1}
         key2: !Sub ${key2}
         value2: !Sub ${value2}
+Outputs:
+  MSKClusterArn:
+    Description: "ARN of the newly created MSK Cluster"
+    Value: !Ref MSKCluster
+    Export:
+      Name: MSKClusterArn

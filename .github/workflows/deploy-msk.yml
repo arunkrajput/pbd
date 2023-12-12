@@ -30,7 +30,7 @@ jobs:
      
       - run: pwd
       - run: ls -l
-      - run: aws cloudformation create-stack --stack-name "${{ vars.STACK_NAME }}" --template-body "file://${{ vars.YAML_FOLDER }}/msk-pbd.yaml" --parameters "file://${{ vars.JSON_FOLDER }}/msk-pbd.json" --output json >> msk-details
-      - run: cat msk-details
+      - run: aws cloudformation create-stack --stack-name "${{ vars.STACK_NAME }}" --template-body "file://${{ vars.YAML_FOLDER }}/msk-pbd.yaml" --parameters "file://${{ vars.JSON_FOLDER }}/msk-pbd.json"
+      - run: aws cloudformation describe-stacks --stack-name "${{ vars.STACK_NAME }}" --query 'Stacks[0].Outputs[0].OutputValue'
     
       

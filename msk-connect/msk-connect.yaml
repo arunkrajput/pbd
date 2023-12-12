@@ -16,12 +16,12 @@ Parameters:
 
   
 Resources:
-  MSKConnectTest:
+  MSKConnect:
     Type: AWS::KafkaConnect::Connector
     Properties:
       Capacity:
         AutoScaling:
-          WorkerCount: 2
+          MaxWorkerCount: 2
           McuCount: 1
           MinWorkerCount: 1
           ScaleInPolicy:
@@ -58,4 +58,9 @@ Resources:
       WorkerConfiguration:
         Revision: 1
         WorkerConfigurationArn: arn:aws:kafkaconnect:us-west-2:212887972892:worker-configuration/persona-msk-connector-worker-configs-norestart/34f18a97-8bbc-457b-8a0a-1b88997250c7-2
-
+Outputs:
+  MSKClusterArn:
+    Description: "ARN of the newly created MSK Cluster"
+    Value: !Ref MSKCluster
+    Export:
+      Name: MSKClusterArn
