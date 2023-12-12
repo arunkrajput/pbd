@@ -1,0 +1,16 @@
+name: Deploy topic on cluster stack
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: run shell script to create topic
+    runs-on: ubuntu-latest
+    environment: dev
+
+    steps:
+      - run: pwd
+      - run: ls -l
+    
+      
