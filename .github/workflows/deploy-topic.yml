@@ -33,7 +33,7 @@ jobs:
       - run: ls -al kafka_2.13-2.8.0/bin/
       - run: aws kafka get-bootstrap-brokers --cluster-arn arn:aws:kafka:us-west-2:212887972892:cluster/az-persona4-dev/95146d5b-4693-4f1b-a778-1f07fc018ae1-2
       # run: ./create_topics1.sh '${{vars.CONFIG_FILE}}' util/topics.csv"
-      #- run: util/create_topic.sh util/topics.csv b-1.azpersona4dev.wgi9ny.c2.kafka.us-west-2.amazonaws.com:9098,b-2.azpersona4dev.wgi9ny.c2.kafka.us-west-2.amazonaws.com:9098 
-      - run: util/create_topic.sh util/topics.csv b-1.azpersona4dev.wgi9ny.c2.kafka.us-west-2.amazonaws.com,b-2.azpersona4dev.wgi9ny.c2.kafka.us-west-2.amazonaws.com 
+      - run: util/create_topic.sh util/topics.csv b-1.azpersona4dev.wgi9ny.c2.kafka.us-west-2.amazonaws.com:9098,b-2.azpersona4dev.wgi9ny.c2.kafka.us-west-2.amazonaws.com:9098 
+      #- run: util/create_topic.sh util/topics.csv b-1.azpersona4dev.wgi9ny.c2.kafka.us-west-2.amazonaws.com,b-2.azpersona4dev.wgi9ny.c2.kafka.us-west-2.amazonaws.com 
     
       
