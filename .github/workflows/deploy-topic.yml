@@ -31,6 +31,8 @@ jobs:
       - run: tar -xzf kafka_2.13-2.8.0.tgz
       - run: ls -al
       - run: ls -al kafka_2.13-2.8.0/bin/
-      - run: util/create_topic.sh util/topics.csv b-2.azpersona4dev.rwpi61.c2.kafka.us-west-2.amazonaws.com:9098,b-1.azpersona4dev.rwpi61.c2.kafka.us-west-2.amazonaws.com:9098 
+      - run: aws kafka get-bootstrap-brokers --cluster-arn ****
+      #- run: ./create_topics1.sh config.json topics.csv
+      #- run: util/create_topic.sh util/topics.csv b-2.azpersona4dev.rwpi61.c2.kafka.us-west-2.amazonaws.com:9098,b-1.azpersona4dev.rwpi61.c2.kafka.us-west-2.amazonaws.com:9098 
     
       
