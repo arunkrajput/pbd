@@ -25,5 +25,5 @@ do
 
         echo $retention_days  $topic_name $retention_ms
 
-        kafka_2.13-2.8.0/bin/kafka-topics.sh --create --topic $topic_name --bootstrap-server $2 --config retention.ms=$retention_ms --partitions $partitions --replication-factor $replication_factor
+        ./bin/kafka-topics.sh --create --topic $topic_name --bootstrap-server $2 --config retention.ms=$retention_ms --partitions $partitions --replication-factor $replication_factor
 done < $1
