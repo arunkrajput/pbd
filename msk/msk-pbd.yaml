@@ -68,7 +68,7 @@ Resources:
       EncryptionInfo:
         EncryptionInTransit:
           InCluster: true
-          ClientBroker: TLS
+          ClientBroker: TLS_PLAINTEXT
       EnhancedMonitoring: "PER_TOPIC_PER_BROKER"
       OpenMonitoring:
         Prometheus:
@@ -88,6 +88,10 @@ Resources:
         Sasl:
           Iam:
             Enabled: true
+          Scram:
+            Enabled: true  
+        Unauthenticated:
+          Enabled: true    
       Tags:
         key1: !Sub ${key1}
         value2: !Sub ${value1}
