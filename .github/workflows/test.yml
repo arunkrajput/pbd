@@ -5,7 +5,7 @@ on:
     inputs:
       environment:
         type: choice
-        description: " test.."
+        description: " select env.."
         options:
             - test
             - dev
@@ -15,12 +15,11 @@ on:
         default: 'dev'
       Opeartion:
         type: choice
-        description: " test.."
+        description: " select opeartion.."
         options:
-            - test
-            - dev
-            - preprod
-            - prod
+            - create
+            - update
+            - delete
         required: true
         default: 'dev'
       confirm:
