@@ -3,31 +3,31 @@ name: Deploy topic on cluster stack
 on:
   workflow_dispatch:
     inputs:
-        environment:
-            type: choice
-            description: " test.."
-            options:
-                - test
-                - dev
-                - preprod
-                - prod
-            required: true
-            default: 'dev'
-        Opeartion:
-            type: choice
-            description: " test.."
-            options:
-                - test
-                - dev
-                - preprod
-                - prod
-            required: true
-            default: 'dev'
-          confirm:
-            type: boolean
-            description: "test.." 
-            required: true
-            default: false       
+      environment:
+        type: choice
+        description: " test.."
+        options:
+            - test
+            - dev
+            - preprod
+            - prod
+        required: true
+        default: 'dev'
+      Opeartion:
+        type: choice
+        description: " test.."
+        options:
+            - test
+            - dev
+            - preprod
+            - prod
+        required: true
+        default: 'dev'
+      confirm:
+        type: boolean
+        description: "test.." 
+        required: true
+        default: false       
         
     
   
