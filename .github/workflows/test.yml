@@ -24,7 +24,7 @@ on:
         default: 'create'
       confirm:
         type: boolean
-        description: "test.." 
+        description: "select.." 
         required: true
         default: false       
         
