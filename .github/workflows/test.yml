@@ -21,7 +21,7 @@ on:
             - update
             - delete
         required: true
-        default: 'dev'
+        default: 'create'
       confirm:
         type: boolean
         description: "test.." 
