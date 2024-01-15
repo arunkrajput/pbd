@@ -15,7 +15,7 @@ on:
         default: 'dev'
       Opeartion:
         type: choice
-        description: " select opeartion.."
+        description: " select operation.."
         options:
             - create
             - update
