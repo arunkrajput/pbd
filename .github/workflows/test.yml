@@ -24,7 +24,7 @@ jobs:
   deploy:
     name: run shell script to create topic
     runs-on: ubuntu-latest
-    environment: dev
+    environment: ${{ github.event.inputs.environment}}
 
     steps:
       - uses: actions/checkout@v2
@@ -41,5 +41,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-    
+      - name: print TEST value
+        run: echo "${{ vars.TEST }}"
       
