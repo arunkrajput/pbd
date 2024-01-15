@@ -39,6 +39,9 @@ jobs:
 
     steps:
      
-      - name: print TEST value
+      - name: print Env value
+        run: echo "${{ github.event.inputs.environment}}"
+      
+      - name: print Opr value
         run: echo "${{ github.event.inputs.operation}}"
       
