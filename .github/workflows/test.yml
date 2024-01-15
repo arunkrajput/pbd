@@ -13,12 +13,24 @@ on:
                 - prod
             required: true
             default: 'dev'
-        confirm:
+        Opeartion:
+            type: choice
+            description: " test.."
+            options:
+                - test
+                - dev
+                - preprod
+                - prod
+            required: true
+            default: 'dev'
+          confirm:
             type: boolean
             description: "test.." 
             required: true
             default: false       
-
+        
+    
+  
 
 jobs:
   deploy:
