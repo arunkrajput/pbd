@@ -1,3 +1,9 @@
 {
     "BootstrapBrokerStringSaslIam": "b-2.azpersona4dev.wgi9ny.c2.kafka.us-west-2.amazonaws.com:9098,b-1.azpersona4dev.wgi9ny.c2.kafka.us-west-2.amazonaws.com:9098"
 }
+{
+    "BootstrapBrokerString": "b-1.azpersona4dev.viwgpa.c2.kafka.us-west-2.amazonaws.com:9092,b-2.azpersona4dev.viwgpa.c2.kafka.us-west-2.amazonaws.com:9092",
+    "BootstrapBrokerStringTls": "b-1.azpersona4dev.viwgpa.c2.kafka.us-west-2.amazonaws.com:9094,b-2.azpersona4dev.viwgpa.c2.kafka.us-west-2.amazonaws.com:9094",
+    "BootstrapBrokerStringSaslScram": "b-1.azpersona4dev.viwgpa.c2.kafka.us-west-2.amazonaws.com:9096,b-2.azpersona4dev.viwgpa.c2.kafka.us-west-2.amazonaws.com:9096",
+    "BootstrapBrokerStringSaslIam": "b-1.azpersona4dev.viwgpa.c2.kafka.us-west-2.amazonaws.com:9098,b-2.azpersona4dev.viwgpa.c2.kafka.us-west-2.amazonaws.com:9098"
+}

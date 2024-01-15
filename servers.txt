@@ -1,0 +1,2 @@
+null
+b-1.azpersona4dev.viwgpa.c2.kafka.us-west-2.amazonaws.com:9092,b-2.azpersona4dev.viwgpa.c2.kafka.us-west-2.amazonaws.com:9092

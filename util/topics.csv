@@ -1,5 +1,2 @@
 TopicName,Retention,Partition,ReplicationFactor
 macc_traksys_dbo_tarea,-1,1,2
-macc_traksys_dbo_tcalendar,-1,1,2
-macc_traksys_dbo_tevent,7,3,2
-macc_traksys_dbo_teventcategory,-1,1,2
