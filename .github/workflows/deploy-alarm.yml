@@ -1,0 +1,38 @@
+name: Deploy alarm stack
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    environment: dev
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: "${{ secrets.AWS_ACCESS_KEY }}"
+          aws-secret-access-key: "${{ secrets.AWS_SECRET_KEY }}"
+          aws-region: "${{ vars.AWS_REGION }}"
+          role-to-assume: "${{ vars.AWS_DEPLOYMENT_ROLE }}"
+          #role-to-assume: "developer"
+          role-duration-seconds: 3600
+          role-session-name: GithubActions      
+      - name: Deploy cloudformation
+        uses: aws-actions/aws-cloudformation-github-deploy@v1
+        with:
+          name: pbd-de-cw-alarm-deploy-stack
+          template: my-alarm/alarm.yml
+          no-fail-on-empty-changeset: "1"
+          capabilities: CAPABILITY_IAM,CAPABILITY_AUTO_EXAPND
+          parameter-overrides: >-
+            Appname1="a1,a2",
+            SNSTopicName=${{vars.SNS_TOPIC_NAME}},
+            SNSENdPoint=${{vars.SNS_ENDPOINT}}
+
+      
+      
