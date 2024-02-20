@@ -44,29 +44,5 @@ Resources:
           Stattistics: Average
           Threshold: 50
           TreaMissingData: missing
-          
-  'Fn::ForEach::Applications1':
-    - Appname1
-    - !Ref Appnames1:
-    - '${Appname1}':
-        Type: AWS::CloudWatch::Alarm
-        Properties:
-          ActionaEnabled: True
-          AlarmActions:
-            - !Ref SNSTopic
-          AlamDescription: CPU Utilization with 70%
-          AlarmName: !Join ['-',[!Join ['1',!Split ['1',!Ref Appname1]],CPUUtlization"]]
-          ComparisonOperator: GreaterThanThreshold
-          DataPointsToAlarm: 1
-          Dimensions:
-            - Name: Application
-              Value: !Join ['-',!Split ['1', !Ref Appname1]]
-          EvaluationPeriod: 1
-          InsufficientDataActions:
-            - !Ref SNSTopic
-          MetricName: cpuUtilization
-          Namespace: AWS/KinasisAnalytics
-          Period: 300
-          Stattistics: Average
-          Threshold: 50
-          TreaMissingData: missing
+
+  

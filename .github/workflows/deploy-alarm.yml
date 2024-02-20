@@ -30,6 +30,7 @@ jobs:
           no-fail-on-empty-changeset: "1"
           capabilities: CAPABILITY_IAM,CAPABILITY_AUTO_EXPAND
           parameter-overrides: >-
-            Appnames1="a1,a2",
+            Appnames1="a1,
+            a2",
             SNSTopicName=${{ vars.SNS_TOPIC_NAME }},
             SNSEndPoint=${{ vars.SNS_ENDPOINT }}
