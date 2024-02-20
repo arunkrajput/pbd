@@ -31,5 +31,5 @@ jobs:
           capabilities: CAPABILITY_IAM,CAPABILITY_AUTO_EXPAND
           parameter-overrides: >-
             Appnames1="a1,a2",
-            SNSTopicName=${{vars.SNS_TOPIC_NAME}},
-            SNSEndPoint=${{vars.SNS_ENDPOINT}}
+            SNSTopicName=${{ vars.SNS_TOPIC_NAME }},
+            SNSEndPoint=${{ vars.SNS_ENDPOINT }}

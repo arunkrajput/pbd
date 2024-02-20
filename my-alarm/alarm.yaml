@@ -1,7 +1,8 @@
 Parameters:
   Appnames1:
     Description: App 1
-    Type: CommaDelimitedList
+    Type: String
+    #Type: CommaDelimitedList
   SNSTopicName:
     Description: SNS Topic name
     Type: String
@@ -41,5 +42,3 @@ Resources:
           Stattistics: Average
           Threshold: 50
           TreaMissingData: missing
-
-
