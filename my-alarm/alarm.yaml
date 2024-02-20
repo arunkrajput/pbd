@@ -31,7 +31,7 @@ Resources:
         DataPointsToAlarm: 1
         Dimensions:
           - Name: Application
-            Value: !Join ['-',Split['1', !Ref Appname1]]
+            Value: !Join ['-',!Split ['1', !Ref Appname1]]
         EvaluationPeriod: 1
         InsufficientDataActions:
           - !Ref SNSTopic
