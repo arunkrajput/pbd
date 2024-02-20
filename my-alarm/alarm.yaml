@@ -1,3 +1,5 @@
+Transform: 'AWS:LanguageExtensions'
+
 Parameters:
   Appnames1:
     Description: App 1
