@@ -33,6 +33,3 @@ jobs:
             Appname1="a1,a2",
             SNSTopicName=${{vars.SNS_TOPIC_NAME}},
             SNSENdPoint=${{vars.SNS_ENDPOINT}}
-
-      
-      

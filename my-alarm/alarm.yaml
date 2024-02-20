@@ -26,7 +26,7 @@ Resources:
         AlarmActions:
           - !Ref SNSTopic
         AlamDescription: CPU Utilization with 70%
-        AlarmName: !Join ['-',[!Join ['1',!Split['1',!Ref Appname1]],CPUUtlization"]]
+        AlarmName: !Join ['-',[!Join ['1',!Split ['1',!Ref Appname1]],CPUUtlization"]]
         ComparisonOperator: GreaterThanThreshold
         DataPointsToAlarm: 1
         Dimensions:
