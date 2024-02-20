@@ -36,7 +36,7 @@ Resources:
           InsufficientDataActions:
             - !Ref SNSTopic
           MetricName: cpuUtilization
-          Namespace: AWS/KinasisAnalytcis
+          Namespace: AWS/KinasisAnalytics
           Period: 300
           Stattistics: Average
           Threshold: 50
